@@ -2,7 +2,7 @@ name: update_xray_json_config_for_dig
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '0 0/6 * * *'
 jobs:  # 28400
   build:
     runs-on: ubuntu-latest
@@ -23,5 +23,5 @@ jobs:  # 28400
           pushd xray_json_config_for_dig
           git submodule update --init
           ./delete_unavailable_json_cfg.sh
-          ./add_link_2_json_cfg.sh
+          # ./add_link_2_json_cfg.sh
           popd
